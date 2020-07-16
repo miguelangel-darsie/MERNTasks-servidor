@@ -11,6 +11,7 @@ const auth = require('../middleware/auth');
 router.get('/', 
     auth,
     authController.usuarioAutenticado
+    //comentario
 );
 
 router.post('/', 
