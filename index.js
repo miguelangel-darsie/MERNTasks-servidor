@@ -10,11 +10,12 @@ conectarDB();
 
 // habilitar cors
 app.use(cors()); 
-app.use((req, res) => {
-    res.header('Access-Control-Allow-Origin', '*');  // parametros predeterminados.
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', 'https://wizardly-aryabhata-4f0029.netlify.app/');  // parametros predeterminados.
     res.header('Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept');
     res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
     res.header('Allow', 'GET');
+    next(); 
 })
 
 // Habilitar express.json
