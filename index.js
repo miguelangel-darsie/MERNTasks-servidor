@@ -10,6 +10,13 @@ conectarDB();
 
 // habilitar cors
 app.use(cors()); 
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');  // parametros predeterminados.
+    res.header('Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
+    res.header('Allow', 'GET');
+    next();
+  })
 
 // Habilitar express.json
 app.use(express.json({ extended: true })); 
