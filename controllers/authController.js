@@ -51,6 +51,7 @@ exports.autenticarUsuario = async (req, res) => {
 };
 
 exports.usuarioAutenticado = async (req, res) => {
+    console.log('llegó acá?', req.header, req.body ); 
     try {
         const usuario = await Usuario.findById(req.usuario.id).select('-password'); 
         res.json({ usuario })
